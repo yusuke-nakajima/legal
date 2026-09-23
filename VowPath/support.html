@@ -1,0 +1,193 @@
+<title>VowPath サポート・お問い合わせ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --paper: #FAFBFE;
+    --paper-raised: #FFFFFF;
+    --ink: #17202B;
+    --ink-soft: #4A5568;
+    --muted: #7C8798;
+    --line: #E3E8F1;
+    --accent: #3B82F6;
+    --accent-soft: #EAF2FF;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171F;
+      --paper-raised: #1B1F2A;
+      --ink: #E7ECF6;
+      --ink-soft: #B7C0D1;
+      --muted: #7E889B;
+      --line: #2A3040;
+      --accent: #6C9BFA;
+      --accent-soft: #1C2740;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14171F;
+    --paper-raised: #1B1F2A;
+    --ink: #E7ECF6;
+    --ink-soft: #B7C0D1;
+    --muted: #7E889B;
+    --line: #2A3040;
+    --accent: #6C9BFA;
+    --accent-soft: #1C2740;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  header.top {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 6px;
+  }
+
+  .wordmark .name {
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+  }
+
+  .wordmark .kind {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .top p.lede {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 60ch;
+  }
+
+  section.doc { margin-bottom: 64px; }
+
+  .doc .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+
+  .doc h2 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    margin: 0 0 4px;
+  }
+
+  .doc .updated {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+
+  .doc p, .doc li { color: var(--ink-soft); font-size: 15px; }
+  .doc ul { padding-left: 1.3em; margin: 8px 0; }
+  .doc li { margin: 4px 0; }
+
+  .contact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+    display: grid;
+    gap: 14px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-row .label { font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: 0.03em; }
+  .contact-row .value { font-size: 14.5px; color: var(--ink); text-align: right; }
+
+  footer.bottom {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 520px) {
+    .wordmark .name { font-size: 28px; }
+    .doc h2 { font-size: 22px; }
+    .contact-row { flex-direction: column; }
+    .contact-row .value { text-align: left; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <p class="wordmark"><span class="name">VowPath</span><span class="kind">サポート</span></p>
+    <p class="lede">パートナーと約束を共有し、お互いの気持ちを伝え合うためのアプリ「VowPath」のサポート窓口です。不具合報告やご質問はこちらからご連絡ください。</p>
+  </header>
+
+  <section class="doc">
+    <p class="eyebrow">Support</p>
+    <h2>お問い合わせ</h2>
+    <p class="updated">通常、受付から2営業日以内にご返信します。</p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="label">運営者</span>
+        <span class="value">Yusuke Nakajima</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">メールアドレス</span>
+        <span class="value">nakajima.works.2026@gmail.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">対応内容</span>
+        <span class="value">不具合報告・アカウント/データ削除依頼・機能に関するご質問</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 24px;">プライバシーポリシーは<a href="privacy.html">こちら</a>をご確認ください。</p>
+  </section>
+
+  <footer class="bottom">
+    <span>© 2026 VowPath</span>
+    <span>本ページはApp Store Connect申請用に作成されました</span>
+  </footer>
+</div>
