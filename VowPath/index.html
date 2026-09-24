@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VowPath（バウパス） — 約束を、忘れないために</title>
+<meta name="description" content="自分との約束も、誰かとの約束も。書き留めて、忘れずにいるためのiOSアプリです。">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --paper: #FBF7F1;
+    --card: #FFFFFF;
+    --ink: #2B2420;
+    --ink-soft: #8A7F72;
+    --muted: #ABA095;
+    --line: #EDE6DB;
+    --accent: #C7623D;
+    --accent-soft: #F5E9E1;
+    --green: #3E6B5C;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1A1614;
+      --card: #241E1B;
+      --ink: #F2EBE3;
+      --ink-soft: #B5A99B;
+      --muted: #8A7F72;
+      --line: #3A312C;
+      --accent: #E0805C;
+      --accent-soft: #3A2620;
+      --green: #6FA891;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1A1614;
+    --card: #241E1B;
+    --ink: #F2EBE3;
+    --ink-soft: #B5A99B;
+    --muted: #8A7F72;
+    --line: #3A312C;
+    --accent: #E0805C;
+    --accent-soft: #3A2620;
+    --green: #6FA891;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.hero {
+    text-align: center;
+    padding: 72px 0 40px;
+  }
+
+  header.hero img.icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  h1 {
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    margin: 0 0 2px;
+    letter-spacing: 0.01em;
+  }
+
+  .reading { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+
+  .tagline {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .status {
+    display: inline-block;
+    margin-top: 24px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  section { margin-top: 56px; }
+
+  h2 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  p { font-size: 15px; color: var(--ink-soft); margin: 0 0 16px; }
+  p.lead { color: var(--ink); }
+
+  .features { display: grid; gap: 14px; }
+
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+
+  .feature h3 {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .feature p { font-size: 13.5px; margin: 0; line-height: 1.8; }
+
+  table.plans {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.plans th, table.plans td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.plans th { color: var(--muted); font-size: 12px; font-weight: 700; }
+  table.plans td { color: var(--ink-soft); }
+  table.plans td.name { color: var(--ink); font-weight: 700; }
+
+  nav.links { display: grid; gap: 10px; }
+
+  nav.links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  nav.links a:hover { border-color: var(--accent); color: var(--accent); }
+  nav.links a span.arrow { color: var(--muted); font-weight: 400; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    header.hero { padding: 48px 0 32px; }
+    h1 { font-size: 28px; }
+    .tagline { font-size: 15px; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" src="icon.png" alt="VowPath">
+    <h1>VowPath</h1>
+    <p class="reading">バウパス</p>
+    <p class="tagline">自分との約束も、誰かとの約束も。</p>
+    <!-- 公開後、ここをApp Storeへのリンクに差し替える -->
+    <span class="status">App Storeで公開準備中です</span>
+  </header>
+
+  <section>
+    <h2>VowPathについて</h2>
+    <p class="lead">
+      決めたのに、忘れてしまう。伝えたのに、そのままになっている。<br>
+      約束は、交わした瞬間よりも、その後のほうが難しいものです。
+    </p>
+    <p>
+      VowPathは、小さな誓いを書き留めて、忘れずに歩いていくためのiOSアプリです。
+      自分との約束も、誰かとの約束も、同じ場所に置いておけます。
+      アカウント登録なしで始められ、大切な人と共有したくなったときだけ登録すれば大丈夫です。
+    </p>
+  </section>
+
+  <section>
+    <h2>できること</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>自分だけの約束</h3>
+        <p>共有しない約束は端末の中だけに保存され、誰にも見られません。続けたい習慣や、自分との決めごとに。</p>
+      </div>
+      <div class="feature">
+        <h3>誰かと共有する</h3>
+        <p>書いた約束は「確定する」まで相手に見えません。相手の約束には「伝えたいこと」を書き添えられます。共有はいつでも解除できます。</p>
+      </div>
+      <div class="feature">
+        <h3>思考と、叶えたいこと</h3>
+        <p>頭の中にあることをそのまま書き留めたり、いつかの願いごとを記録したり。どちらも端末内にのみ保存されます。</p>
+      </div>
+      <div class="feature">
+        <h3>ホーム画面のウィジェット</h3>
+        <p>重要マークを付けた約束をホーム画面に表示できます。アプリを開かなくても、大切な約束が目に入ります。</p>
+      </div>
+      <div class="feature">
+        <h3>毎日のリマインダー</h3>
+        <p>好きな時刻を選んで、毎日そっとお知らせします。思い出すきっかけを、生活の中に。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>料金</h2>
+    <p>基本機能はすべて無料でご利用いただけます。</p>
+    <table class="plans">
+      <tr>
+        <th>プラン</th>
+        <th>料金</th>
+        <th>内容</th>
+      </tr>
+      <tr>
+        <td class="name">無料</td>
+        <td>¥0</td>
+        <td>約束・メモ・ウィジェット・リマインダー</td>
+      </tr>
+      <tr>
+        <td class="name">VowPath Plus</td>
+        <td>月額 ¥240<br>年額 ¥2,400</td>
+        <td>メモの書き出し・読み込み、広告の非表示</td>
+      </tr>
+      <tr>
+        <td class="name">広告を削除</td>
+        <td>¥480（買い切り）</td>
+        <td>広告の非表示のみ</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>サポートと規約</h2>
+    <nav class="links">
+      <a href="support.html">サポート・お問い合わせ<span class="arrow">→</span></a>
+      <a href="privacy.html">プライバシーポリシー<span class="arrow">→</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">利用規約（EULA）<span class="arrow">→</span></a>
+    </nav>
+  </section>
+
+  <footer>
+    運営者: Yusuke Nakajima<br>
+    &copy; 2026 VowPath
+  </footer>
+</div>
