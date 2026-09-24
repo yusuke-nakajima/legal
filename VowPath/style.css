@@ -1,0 +1,270 @@
+/* VowPath の公開ページ共通スタイル（index / support / privacy） */
+
+:root {
+  --paper: #FBF7F1;
+  --card: #FFFFFF;
+  --ink: #2B2420;
+  --ink-soft: #8A7F72;
+  --muted: #ABA095;
+  --line: #EDE6DB;
+  --accent: #C7623D;
+  --accent-soft: #F5E9E1;
+  --green: #3E6B5C;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1A1614;
+    --card: #241E1B;
+    --ink: #F2EBE3;
+    --ink-soft: #B5A99B;
+    --muted: #8A7F72;
+    --line: #3A312C;
+    --accent: #E0805C;
+    --accent-soft: #3A2620;
+    --green: #6FA891;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #1A1614;
+  --card: #241E1B;
+  --ink: #F2EBE3;
+  --ink-soft: #B5A99B;
+  --muted: #8A7F72;
+  --line: #3A312C;
+  --accent: #E0805C;
+  --accent-soft: #3A2620;
+  --green: #6FA891;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* --- トップページのヒーロー --- */
+
+header.hero { text-align: center; padding: 72px 0 40px; }
+
+header.hero img.icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+h1 {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  margin: 0 0 2px;
+  letter-spacing: 0.01em;
+}
+
+.reading { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+
+.tagline {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 24px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* --- 下層ページのヘッダー --- */
+
+header.page {
+  padding: 56px 0 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+
+header.page .wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 6px;
+}
+
+header.page .wordmark .name {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--accent);
+}
+
+header.page .wordmark .kind {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+
+header.page .lede {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* --- 本文 --- */
+
+section { margin-top: 48px; }
+
+h2 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 32px 0 10px;
+  color: var(--ink);
+}
+
+p { font-size: 15px; color: var(--ink-soft); margin: 0 0 16px; }
+p.lead { color: var(--ink); }
+p.updated { font-size: 13px; color: var(--muted); margin: 0 0 24px; }
+
+ul { padding-left: 1.3em; margin: 8px 0 16px; }
+li { font-size: 15px; color: var(--ink-soft); margin: 4px 0; }
+
+/* --- 機能カード（トップページ） --- */
+
+.features { display: grid; gap: 14px; }
+
+.feature {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.feature h3 { font-size: 15px; margin: 0 0 6px; }
+.feature p { font-size: 13.5px; margin: 0; line-height: 1.8; }
+
+/* --- 表 --- */
+
+.table-scroll { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 8px 0 16px;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+table th { color: var(--muted); font-size: 12px; font-weight: 700; }
+table td { color: var(--ink-soft); }
+table td.name { color: var(--ink); font-weight: 700; }
+
+/* --- 注記 --- */
+
+.note {
+  background: var(--accent-soft);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 18px 0;
+}
+
+/* --- 連絡先カード --- */
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.contact-row .label { font-size: 12px; color: var(--muted); font-weight: 700; }
+.contact-row .value { font-size: 14.5px; color: var(--ink); text-align: right; }
+
+/* --- リンク一覧 --- */
+
+nav.links { display: grid; gap: 10px; }
+
+nav.links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+nav.links a:hover { border-color: var(--accent); color: var(--accent); }
+nav.links a span.arrow { color: var(--muted); font-weight: 400; }
+
+/* --- フッター --- */
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  header.hero { padding: 48px 0 32px; }
+  h1 { font-size: 28px; }
+  .tagline { font-size: 15px; }
+  header.page .wordmark { flex-direction: column; gap: 2px; }
+  .contact-row { flex-direction: column; }
+  .contact-row .value { text-align: left; }
+}

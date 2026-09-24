@@ -1,260 +1,154 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VowPath プライバシーポリシー</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
-<style>
-  :root {
-    --paper: #FAFBFE;
-    --paper-raised: #FFFFFF;
-    --ink: #17202B;
-    --ink-soft: #4A5568;
-    --muted: #7C8798;
-    --line: #E3E8F1;
-    --accent: #3B82F6;
-    --accent-soft: #EAF2FF;
-    --accent-2: #8B5CF6;
-    --accent-2-soft: #F3EEFF;
-    --warn: #F97316;
-    --warn-soft: #FFF3E0;
-    --placeholder: #C2410C;
-    --placeholder-bg: #FFF3E8;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #14171F;
-      --paper-raised: #1B1F2A;
-      --ink: #E7ECF6;
-      --ink-soft: #B7C0D1;
-      --muted: #7E889B;
-      --line: #2A3040;
-      --accent: #6C9BFA;
-      --accent-soft: #1C2740;
-      --accent-2: #A98BFA;
-      --accent-2-soft: #241E3D;
-      --warn: #FBA65C;
-      --warn-soft: #33230F;
-      --placeholder: #FBA65C;
-      --placeholder-bg: #33230F;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --paper: #14171F;
-    --paper-raised: #1B1F2A;
-    --ink: #E7ECF6;
-    --ink-soft: #B7C0D1;
-    --muted: #7E889B;
-    --line: #2A3040;
-    --accent: #6C9BFA;
-    --accent-soft: #1C2740;
-    --accent-2: #A98BFA;
-    --accent-2-soft: #241E3D;
-    --warn: #FBA65C;
-    --warn-soft: #33230F;
-    --placeholder: #FBA65C;
-    --placeholder-bg: #33230F;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: var(--accent); }
-
-  .wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 24px 96px;
-  }
-
-  header.top {
-    padding: 56px 0 32px;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 40px;
-  }
-
-  .wordmark {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin: 0 0 6px;
-  }
-
-  .wordmark .name {
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-    font-weight: 900;
-    font-size: 34px;
-    color: var(--accent);
-    letter-spacing: 0.01em;
-  }
-
-  .wordmark .kind {
-    font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--ink-soft);
-  }
-
-  .top p.lede {
-    margin: 10px 0 0;
-    color: var(--muted);
-    font-size: 14px;
-    max-width: 60ch;
-  }
-
-  section.doc { margin-bottom: 64px; scroll-margin-top: 24px; }
-
-  .doc .eyebrow {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin: 0 0 6px;
-  }
-
-  .doc h2 {
-    font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    margin: 0 0 4px;
-    text-wrap: balance;
-  }
-
-  .doc .updated {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 0 0 28px;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .doc h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 32px 0 10px;
-    color: var(--ink);
-  }
-
-  .doc p, .doc li { color: var(--ink-soft); font-size: 15px; }
-  .doc ul, .doc ol { padding-left: 1.3em; margin: 8px 0; }
-  .doc li { margin: 4px 0; }
-
-  table.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0 4px;
-    font-size: 13.5px;
-  }
-  table.data-table th, table.data-table td {
-    text-align: left;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--line);
-    vertical-align: top;
-  }
-  table.data-table th {
-    color: var(--muted);
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.03em;
-  }
-  table.data-table td { color: var(--ink-soft); }
-  .data-table-scroll { overflow-x: auto; }
-
-  .note {
-    background: var(--accent-soft);
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    margin: 18px 0;
-  }
-  .note.warn { background: var(--warn-soft); }
-  .note strong { color: var(--ink); }
-
-  footer.bottom {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  @media (max-width: 520px) {
-    .wordmark .name { font-size: 28px; }
-    .doc h2 { font-size: 22px; }
-  }
-</style>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
 
 <div class="wrap">
-  <header class="top">
+  <header class="page">
     <p class="wordmark"><span class="name">VowPath</span><span class="kind">プライバシーポリシー</span></p>
-    <p class="lede">パートナーと約束を共有し、お互いの気持ちを伝え合うためのアプリ「VowPath」における利用者情報の取り扱いについて説明します。</p>
+    <p class="lede">
+      約束を書き留めて、忘れずにいるためのアプリ「VowPath」における利用者情報の取り扱いについて説明します。
+    </p>
   </header>
 
-  <section class="doc" id="privacy">
-    <p class="eyebrow">Privacy Policy</p>
+  <section>
     <h2>プライバシーポリシー</h2>
-    <p class="updated">制定日：2026年9月23日</p>
+    <p class="updated">制定日：2026年9月23日／最終改定日：2026年9月24日</p>
 
-    <p>Yusuke Nakajima（以下「当方」といいます）は、VowPath（以下「本アプリ」といいます）における利用者情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。</p>
+    <p>
+      Yusuke Nakajima（以下「当方」といいます）は、VowPath（以下「本アプリ」といいます）における
+      利用者情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
+    </p>
 
-    <h3>1. 取得する情報</h3>
-    <p>本アプリは、メールアドレスとパスワードによるアカウント登録を提供しており、以下の情報を取得します。</p>
-    <div class="data-table-scroll">
-      <table class="data-table">
-        <thead>
-          <tr><th>情報の種類</th><th>取得タイミング</th><th>用途</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>メールアドレス</td><td>アカウント登録時</td><td>ログイン・アカウントの識別</td></tr>
-          <tr><td>ユーザー名</td><td>アカウント登録時</td><td>パートナーへの表示名</td></tr>
-          <tr><td>招待コード・連携リクエスト情報</td><td>パートナー連携時</td><td>パートナーとの紐付け、なりすまし防止のための承認フロー</td></tr>
-          <tr><td>共有設定をONにした約束の内容（約束の文章・重要フラグ・伝えたいことメッセージ・「最近守れてない」フラグ）</td><td>共有機能を使った約束の作成・編集時</td><td>パートナーとの約束の共有</td></tr>
-        </tbody>
+    <h3>1. アカウント登録について</h3>
+    <p>
+      本アプリは、アカウント登録をしなくてもご利用いただけます。
+      アカウントが必要になるのは、パートナーと約束を共有する場合のみです。
+    </p>
+
+    <h3>2. 取得する情報</h3>
+    <p>アカウントを登録された場合、以下の情報を取得します。</p>
+    <div class="table-scroll">
+      <table>
+        <tr><th>情報の種類</th><th>取得タイミング</th><th>用途</th></tr>
+        <tr>
+          <td class="name">メールアドレス</td>
+          <td>アカウント登録時</td>
+          <td>ログイン、アカウントの識別、確認メール・パスワード再設定メールの送信</td>
+        </tr>
+        <tr>
+          <td class="name">ユーザー名</td>
+          <td>アカウント登録時</td>
+          <td>パートナーへの表示名</td>
+        </tr>
+        <tr>
+          <td class="name">招待コード・連携リクエスト情報</td>
+          <td>パートナー連携時</td>
+          <td>パートナーとの紐付け、なりすまし防止のための承認</td>
+        </tr>
+        <tr>
+          <td class="name">共有した約束の内容<br>（本文・重要フラグ・「伝えたいこと」・「最近守れてない」の印）</td>
+          <td>共有機能の利用時</td>
+          <td>パートナーとの約束の共有</td>
+        </tr>
+        <tr>
+          <td class="name">購入状態</td>
+          <td>App内課金の利用時</td>
+          <td>VowPath Plus・広告非表示の有効・無効の判定</td>
+        </tr>
       </table>
     </div>
-    <div class="note">「自分だけの約束」（共有しない約束）、メモ（思考・叶えたいこと）、通知リマインダーの設定は、お使いの端末内にのみ保存され、当方のサーバーには送信されません。</div>
 
-    <h3>2. アプリ内購入について</h3>
-    <p>本アプリには「VowPath Plus」という有料プランのご案内画面がありますが、現時点では実際の決済処理は行っておらず、テスト用の表示のみです。実際の決済を導入する際は、本ポリシーを更新し、決済代行事業者（App Store等）を通じて処理する情報を明記します。</p>
-
-    <h3>3. 通知について</h3>
-    <p>本アプリの通知リマインダーは、お使いの端末上でのみ動作するローカル通知です。通知の送信のために当方のサーバーへ情報が送信されることはありません。</p>
-
-    <h3>4. 広告について</h3>
-    <p>本アプリは現時点で広告を配信していません。将来的に広告配信を導入する場合は、事前に本ポリシーを更新します。</p>
-
-    <h3>5. 第三者への提供・委託</h3>
-    <p>本アプリは、以下の外部サービスを利用してデータを処理しています。これらの事業者に対し、業務委託の範囲内で必要な情報を提供します。</p>
+    <h3>3. 端末内にのみ保存される情報</h3>
+    <p>以下は、お使いの端末内にのみ保存され、当方のサーバーには送信されません。</p>
     <ul>
-      <li><strong>Google Firebase（Authentication / Firestore）</strong> — アカウント認証、共有設定をONにした約束データの保存</li>
+      <li>「自分だけの約束」（共有していない約束）</li>
+      <li>メモ（思考・叶えたいこと・タグ）</li>
+      <li>通知リマインダーの設定</li>
     </ul>
+    <div class="note">
+      これらは端末を初期化したりアプリを削除したりすると失われます。
+      メモについては、VowPath Plusの書き出し機能でバックアップを作成できます。
+    </div>
 
-    <h3>6. データの保管期間・削除</h3>
-    <p>取得した情報は、アカウントが存在する期間中保管します。アカウント削除・データ削除をご希望の場合は、下記のお問い合わせ先までご連絡ください。合理的な期間内に対応します。</p>
+    <h3>4. アプリ内購入について</h3>
+    <p>
+      本アプリには、サブスクリプション「VowPath Plus」および買い切りの「広告を削除」があります。
+      決済はApp Storeを通じて処理され、クレジットカード番号などの支払い情報を当方が取得することはありません。
+      購入状態の管理には、後述のRevenueCatを利用しています。
+    </p>
 
-    <h3>7. 未成年の利用について</h3>
+    <h3>5. 広告について</h3>
+    <p>
+      本アプリは、Google AdMobを利用してバナー広告を表示します（VowPath Plusにご登録いただいた場合、
+      または「広告を削除」をご購入いただいた場合を除きます）。
+    </p>
+    <p>
+      広告配信にあたり、AdMobは広告識別子（IDFA）などのデバイス情報を利用する場合があります。
+      本アプリは、iOSの「トラッキングの許可を求める」ダイアログを通じて、事前に許可をお尋ねします。
+      許可されなかった場合は、<strong>非パーソナライズ広告のみ</strong>を配信します。
+    </p>
+    <div class="note">
+      トラッキングの許可は、iOSの「設定」＞「プライバシーとセキュリティ」＞「トラッキング」から
+      いつでも変更できます。
+    </div>
+
+    <h3>6. 通知について</h3>
+    <p>
+      本アプリの通知リマインダーは、お使いの端末上でのみ動作するローカル通知です。
+      通知の送信のために当方のサーバーへ情報が送信されることはありません。
+    </p>
+
+    <h3>7. 第三者への提供・委託</h3>
+    <p>
+      本アプリは、以下の外部サービスを利用して情報を処理しています。
+      これらの事業者に対し、業務委託の範囲内で必要な情報を提供します。
+    </p>
+    <ul>
+      <li><strong>Google Firebase（Authentication / Cloud Firestore）</strong> — アカウント認証、共有した約束データの保存</li>
+      <li><strong>Google AdMob</strong> — 広告の配信</li>
+      <li><strong>RevenueCat</strong> — App内課金の購入状態の管理</li>
+    </ul>
+    <p>
+      上記以外の第三者に対し、利用者の同意なく個人情報を提供することはありません。
+      また、個人情報を販売することはありません。
+    </p>
+
+    <h3>8. データの保管期間・削除</h3>
+    <p>
+      取得した情報は、アカウントが存在する期間中保管します。
+      アカウントの削除やデータの削除をご希望の場合は、下記のお問い合わせ先までご連絡ください。
+      合理的な期間内に対応いたします。
+    </p>
+
+    <h3>9. 未成年の利用について</h3>
     <p>本アプリは13歳未満の方の利用を想定していません。</p>
 
-    <h3>8. 本ポリシーの変更</h3>
-    <p>本ポリシーの内容は、法令等を踏まえて変更されることがあります。変更後のプライバシーポリシーは、本ページに掲載した時点から効力を生じるものとします。</p>
+    <h3>10. 本ポリシーの変更</h3>
+    <p>
+      本ポリシーの内容は、法令等を踏まえて変更されることがあります。
+      変更後のプライバシーポリシーは、本ページに掲載した時点から効力を生じるものとします。
+    </p>
 
-    <h3>9. お問い合わせ</h3>
-    <p>本ポリシーに関するお問い合わせは <a href="support.html">お問い合わせページ</a> をご確認ください。</p>
+    <h3>11. お問い合わせ</h3>
+    <p>
+      本ポリシーに関するお問い合わせは、
+      <a href="support.html">お問い合わせページ</a>をご確認ください。
+    </p>
   </section>
 
-  <footer class="bottom">
-    <span>© 2026 VowPath</span>
-    <span>本ページはApp Store Connect申請用に作成されました</span>
-  </footer>
+  <section>
+    <h2>関連ページ</h2>
+    <nav class="links">
+      <a href="./">VowPathについて<span class="arrow">→</span></a>
+      <a href="support.html">サポート・お問い合わせ<span class="arrow">→</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">利用規約（EULA）<span class="arrow">→</span></a>
+    </nav>
+  </section>
+
+  <footer>&copy; 2026 VowPath</footer>
 </div>
