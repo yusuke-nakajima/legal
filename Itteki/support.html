@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>イッテキ！ サポート・お問い合わせ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<div class="wrap">
+  <header class="page">
+    <p class="wordmark"><span class="name">イッテキ！</span><span class="kind">サポート</span></p>
+    <p class="lede">
+      出かける前の戸締まり確認アプリ「イッテキ！」のサポート窓口です。
+      不具合のご報告やご質問は、こちらからご連絡ください。
+    </p>
+  </header>
+
+  <section>
+    <h2>お問い合わせ</h2>
+    <p class="updated">通常、受付から2営業日以内にご返信します。</p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="label">運営者</span>
+        <span class="value">Yusuke Nakajima</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">メールアドレス</span>
+        <span class="value">nakajima.works.2026@gmail.com</span>
+      </div>
+      <div class="contact-row">
+        <span class="label">対応内容</span>
+        <span class="value">不具合報告・機能に関するご質問</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>よくあるご質問</h2>
+
+    <h3>家を出ても通知が来ません</h3>
+    <p>次の点をご確認ください。</p>
+    <ul>
+      <li>iOSの「設定」＞「イッテキ！」＞「位置情報」が「常に」になっていて、「正確な位置」がオンになっているか。</li>
+      <li>家を出たのが、確かめる時間帯の中だったか。時間帯の外に出たときは知らせません（時刻を決めずに知らせたいときは、時間帯を「終日」にしてください）。</li>
+      <li>チェックしていない項目が残っていたか。全部済んでいれば、何も鳴りません。</li>
+      <li>「今日は知らせない」や「一時停止」がオンになっていないか。</li>
+    </ul>
+    <p>
+      家を出たことの検知には、数十秒から数分の遅れがあります。
+      通知は、家からおよそ100〜300m離れたあたりで届きます。
+      低電力モードのときや、「正確な位置」がオフのときは、さらに遅れたり届かなかったりすることがあります。
+    </p>
+
+    <h3>家にいるのに「確かめていない項目があります」と届きました</h3>
+    <p>
+      位置情報のずれで、家を出たと判定されることがあります。
+      本アプリは、出たと判定してから1分待ち、その間に家に戻ったと判定されれば知らせないようにしていますが、完全には防げません。
+      よく起きる場合は、場所の編集で「その場所とみなす範囲」を広げてみてください。
+    </p>
+
+    <h3>朝の通知（時間帯の始まり）が届きません</h3>
+    <p>
+      iOSの「設定」＞「通知」＞「イッテキ！」で、通知が許可されているかご確認ください。
+      また、iOSでは1つのアプリが予約できる通知の数に上限があるため、本アプリは今日と明日の分の通知だけを予約し、
+      アプリを開いたときに予約し直しています。<strong>2日以上アプリを開かないと、時間帯の始まりの通知が届かないことがあります。</strong>
+      ときどきアプリを開いてください。
+    </p>
+
+    <h3>同じ日にもう一度チェックリストを使いたい</h3>
+    <p>
+      チェックは毎日、深夜3時にまっさらに戻ります。
+      同じ日にもう一度使うときは、TOPの「リストをリセット」を押してください（無料プランでは、広告を見たあとに戻ります）。
+    </p>
+
+    <h3>機種変更するときはどうすればよいですか</h3>
+    <p>
+      データは端末内にのみ保存されているため、新しい端末には引き継がれません。
+      新しい端末で、場所・チェックリスト・時間帯を登録し直してください。
+    </p>
+
+    <h3>データを削除したい</h3>
+    <p>
+      当方のサーバーにはデータがありません。アプリを削除すると、端末内のデータも消去されます。
+    </p>
+
+    <h3>今後追加される機能も イッテキ！ Plus で使えますか</h3>
+    <p>
+      端末の中だけで動く機能は、イッテキ！ Plus に含めて追加していきます。
+      ただし、家を出たことを家族などに知らせる機能（検討中）は、サーバーの運用に費用がかかるため、
+      イッテキ！ Plus とは別の有料プランで提供する予定です。そのほかのサーバーを使う機能も、別のプランになることがあります。
+    </p>
+  </section>
+
+  <section>
+    <h2>関連ページ</h2>
+    <nav class="links">
+      <a href="./">イッテキ！について<span class="arrow">→</span></a>
+      <a href="privacy.html">プライバシーポリシー<span class="arrow">→</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">利用規約（EULA）<span class="arrow">→</span></a>
+    </nav>
+  </section>
+
+  <footer>&copy; 2026 イッテキ！</footer>
+</div>
